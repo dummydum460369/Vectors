@@ -5,7 +5,7 @@ class Vector2d:
 
     def math_form(self):
         # Returns Rectangular Coordinates in vector format
-        return f"{self.val['X']}î, {self.val['Y']}ĵ"
+        return f"{self.val['X']}î+{self.val['Y']}ĵ"
 
     def add_value(self, x=0, y=0):
         # Increments given x and/or y value to instance
