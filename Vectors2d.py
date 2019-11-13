@@ -13,6 +13,10 @@ class Vector2d:
         self.val['X'], self.val['Y'] = self.val['X'] + x, self.val['Y'] + y
         self.val = {'X': self.val['X'], 'Y': self.val['Y']}
 
+    def sum(self,x=0,y=0):
+        # Same as add_value but returns the sum as a new instance
+        return Vector2d(x=self.val['X'] + x, y=self.val['Y'] + y)
+
     def add(self, obj):
         # Requires 1 Positional Argument of Vector2d class
         # Adds given object's values to the instance
@@ -24,4 +28,14 @@ class Vector2d:
         # Requires 1 Positional Argument of Vector2d class
         # Returns Resultant of instance and the given object
         return Vector2d(x=self.val['X'] + obj.val['X'], y=self.val['Y'] + obj.val['Y'])
-    # Hey
+
+    def multiply_scalar(self, scalar):
+        # Requires 1 Positional Argument of type number
+        # Multiplies given scalar to instance
+        # Warning! Doesn't return anything
+        self.val['X'] *= scalar
+        self.val['Y'] *= scalar
+
+    def scalar_product(self, scalar):
+        # Same as multiply_scalar but returns the product as a new instance
+        return Vector2d(x=self.val['X'] * scalar, y=self.val['Y'] * scalar)
